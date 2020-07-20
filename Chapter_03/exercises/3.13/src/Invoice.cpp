@@ -1,8 +1,8 @@
 #include "Invoice.hpp"
 
-using namespace std;
-
-Invoice::Invoice(string number, string description, int quantity, int price)
+Invoice::Invoice(std::string number,
+                 std::string description,
+                 int quantity, int price)
 {
     setPartNumber(number);
     setPartDescription(description);
@@ -31,11 +31,11 @@ void Invoice::setPricePerItem(int price)
 
 //Getters
 
-string Invoice::getPartNumber() const
+std::string Invoice::getPartNumber() const
 {
     return partNumber;
 }
-string Invoice::getPartDescription() const
+std::string Invoice::getPartDescription() const
 {
     return partDescription;
 }

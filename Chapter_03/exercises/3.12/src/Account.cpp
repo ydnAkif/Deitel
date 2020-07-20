@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Account.hpp"
 
-using namespace std;
-
 Account::Account(int initialBalance)
 {
     if (initialBalance >= 0)
@@ -12,7 +10,8 @@ Account::Account(int initialBalance)
     else
     {
         accountBalance = 0;
-        cout << "Error: Unable to initialise balance. Invalid entry." << endl;
+        std::cout << "Error: Unable to initialise balance. Invalid entry."
+                  << std::endl;
     }
 }
 
@@ -37,6 +36,7 @@ void Account::debit(int amount)
     }
     else
     {
-        cout << "Debit amount exceeded account balance." << endl;
+        std::cout << "Debit amount exceeded account balance."
+                  << std::endl;
     }
 }

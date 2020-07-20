@@ -2,7 +2,8 @@
 
 using namespace std;
 
-Employee::Employee(string fName, string lName, int mSalary)
+Employee::Employee(std::string fName,
+                   std::string lName, int mSalary)
 {
     setFirstName(fName);
     setLastName(lName);
@@ -27,12 +28,12 @@ void Employee::setMonthlySalary(int mSalary)
 
 // Getters
 
-string Employee::getFirstName() const
+std::string Employee::getFirstName() const
 {
     return firstName;
 }
 
-string Employee::getLastName() const
+std::string Employee::getLastName() const
 {
     return lastName;
 }
@@ -54,9 +55,21 @@ void Employee::giveRaise(int percent)
 
 void Employee::showEmployees() const
 {
-    cout << "Name          : " << getFirstName() << endl;
-    cout << "LastName      : " << getLastName() << endl;
-    cout << "Montly Salary : " << getMonthlySalary() << endl;
-    cout << "Yearly Salary : " << calculateSalary(12) << endl;
-    cout << endl;
+    std::cout << "Name          : "
+              << getFirstName()
+              << std::endl;
+
+    std::cout << "LastName      : "
+              << getLastName()
+              << std::endl;
+
+    std::cout << "Montly Salary : "
+              << getMonthlySalary()
+              << std::endl;
+
+    std::cout << "Yearly Salary : "
+              << calculateSalary(12)
+              << std::endl;
+
+    std::cout << std::endl;
 }

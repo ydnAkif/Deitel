@@ -38,5 +38,13 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp"
+    },
+    "cmake.configureOnOpen": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.sourceDirectory": "${workspaceFolder}/Chapter_03/exercises/3.14",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#2D098E",
+        "titleBar.activeBackground": "#3E0CC7",
+        "titleBar.activeForeground": "#FAF9FF"
     }
 }

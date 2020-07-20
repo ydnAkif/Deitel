@@ -1,4 +1,3 @@
-
 #include "GradeBook.hpp"
 
 int main()

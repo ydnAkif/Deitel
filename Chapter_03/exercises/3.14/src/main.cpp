@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Employee.hpp"
 
-using namespace std;
-
 int main()
 {
     Employee emp1("Akif", "AYDIN", 1200);
