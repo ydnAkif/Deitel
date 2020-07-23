@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(Program)
+project(GradeBook)
 
 set(PROJECT_DIR ${CMAKE_SOURCE_DIR})
 

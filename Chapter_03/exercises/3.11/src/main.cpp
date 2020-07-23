@@ -6,5 +6,6 @@ int main()
 
     gradeBook1.displayMessage();
 
+    system("pause");
     return 0;
 }
