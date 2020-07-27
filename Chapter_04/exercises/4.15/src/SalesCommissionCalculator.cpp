@@ -38,14 +38,16 @@ void SalesCommissionCalculator::run()
     double dtemp = 0.0f;
     std::cout << std::setprecision(2)
               << std::fixed;
-    std::cout << "\nEnter sales in dollars (-1 to end) : ";
+    std::cout << "\nEnter sales in dollars (-1 to end) :  ";
     std::cin >> dtemp;
+
     setWeeklySales(dtemp);
 
     if (getWeeklySales() != -1)
     {
         setWeeklyEarnings();
-        std::cout << "Salary is                          : "
+
+        std::cout << "Salary is                          : $"
                   << getWeeklyEarnings()
                   << std::endl;
     }
