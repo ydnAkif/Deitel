@@ -2,13 +2,12 @@
 
 GasMileage::GasMileage()
 {
-	milesDriven = 0.0f;
-	totalMilesDriven = 0.0f;
-	galloonsUsed = 0.0f;
-	totalGalloonUsed = 0.0f;
-	tripMPG = 0.0f;
-	totalMPG = 0.0f;
-	
+    milesDriven = 0.0f;
+    totalMilesDriven = 0.0f;
+    galloonsUsed = 0.0f;
+    totalGalloonUsed = 0.0f;
+    tripMPG = 0.0f;
+    totalMPG = 0.0f;
 }
 
 //Setters
