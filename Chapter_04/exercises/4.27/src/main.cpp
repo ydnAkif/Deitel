@@ -33,3 +33,4 @@ int binaryToDecimal(int bin)
     }
     return decimal;
 }
+
