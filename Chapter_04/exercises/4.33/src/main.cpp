@@ -6,7 +6,7 @@ bool isRightTriangle(int, int, int);
 
 int main(int argc, char const *argv[])
 {
-    double a{ 0.0 }, b{ 0.0 }, c{ 0.0 };
+    int a{ 0 }, b{ 0 }, c{ 0 };
 
     std::cout << "Program to determine if 3 values make a right triangle."
         << std::endl;
@@ -19,14 +19,14 @@ int main(int argc, char const *argv[])
         << c
         << " could "
         << (isRightTriangle(a, b, c) ? " ": " not ")
-        << "represent a triangle"
+        << "represent a right triangle"
         << std::endl;
 
     return 0;
 
 }
 
-bool isRightTriangle(double a, double b, double c)
+bool isRightTriangle(int a, int b, int c)
 {
     if ((a*a+b*b==c*c)||(c*c+b*b==a*a)||(a*a+c*c==b*b))
     {
