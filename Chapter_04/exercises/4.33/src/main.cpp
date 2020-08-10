@@ -1,14 +1,14 @@
 #include <iostream>
 #include <cmath>
 
-bool isTriangle(double, double, double);
+bool isRightTriangle(int, int, int);
 
 
 int main(int argc, char const *argv[])
 {
     double a{ 0.0 }, b{ 0.0 }, c{ 0.0 };
 
-    std::cout << "Program to determine if 3 values make a tirangle."
+    std::cout << "Program to determine if 3 values make a right triangle."
         << std::endl;
     std::cout << "Enter 3 nonzero integers: ";
     std::cin >> a >> b >> c;
@@ -18,18 +18,17 @@ int main(int argc, char const *argv[])
         <<","
         << c
         << " could "
-        << (isTriangle(a, b, c) ? " ": " not ")
+        << (isRightTriangle(a, b, c) ? " ": " not ")
         << "represent a triangle"
         << std::endl;
-
 
     return 0;
 
 }
 
-bool isTriangle(double a, double b, double c)
+bool isRightTriangle(double a, double b, double c)
 {
-    if (((a+b)> c) && ((a+c)> b) && ((b+c)> a) && (abs(a-b)< c) && (abs(a-c)< b) && (abs(c-b)< a))
+    if ((a*a+b*b==c*c)||(c*c+b*b==a*a)||(a*a+c*c==b*b))
     {
         return true;
     }
