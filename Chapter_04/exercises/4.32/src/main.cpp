@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 
 bool isTriangle(int a, int b, int c)
 {
-    if (((a+b)> c) && ((a+c)> b) && ((b+c)> a) && (abs(a-b)< c)&&(abs(a-c)< b) &&(abs(c-b)< a))
+    if (((a+b)> c) && ((a+c)> b) && ((b+c)> a) && (abs(a-b)< c) && (abs(a-c)< b) && (abs(c-b)< a))
     {
         return true;
     }
