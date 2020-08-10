@@ -8,7 +8,6 @@ double getDiameter(double);
 void printCircle(double);
 
 
-
 int main(int argc, char const *argv[])
 {
     double radius{ 0 };
