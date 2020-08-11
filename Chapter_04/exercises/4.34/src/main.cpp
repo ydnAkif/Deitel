@@ -1,7 +1,6 @@
 #include <iostream>
 
 int getFactorial(int);
-double getEuler(int);
 
 int main(int argc, char const *argv[])
 {
@@ -28,11 +27,4 @@ int getFactorial(int n)
     }
 
     return factorial;
-}
-
-double getEuler(int a)
-{
-    int accuracy;
-    std::cout << "debenem"
-              << std::endl;
 }
