@@ -115,34 +115,6 @@ int EncryptionSystem::decrypt(int enc)
     return digits;
 }
 
-int EncryptionSystem::swapDigits(int digits)
-{
-    int a, b, c, d, temp, swapped = 0;
-
-    d = digits % 10;
-    digits /= 10;
-
-    c = digits % 10;
-    digits /= 10;
-
-    b = digits % 10;
-    digits /= 10;
-
-    temp = digits;
-    a = c;
-    c = temp;
-    temp = b;
-    b = d;
-    d = temp;
-
-    swapped = (swapped * 10) + a;
-    swapped = (swapped * 10) + b;
-    swapped = (swapped * 10) + c;
-    swapped = (swapped * 10) + d;
-
-    return swapped;
-}
-
 void EncryptionSystem::clearPlainPass()
 {
     plainPassCode = 0;

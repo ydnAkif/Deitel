@@ -21,8 +21,6 @@ public:
 
     bool validatePlainPass(int);
     bool encrypt(int);
-    int decrypt(int);
-    int swapDigits(int);
     void clearPlainPass();
     void clearEncPass();
 };
