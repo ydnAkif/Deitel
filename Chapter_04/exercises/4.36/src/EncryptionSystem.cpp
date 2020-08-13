@@ -1,126 +1,80 @@
 #include "EncryptionSystem.hpp"
 
-EncryptionSystem::EncryptionSystem()
+EncryptionSystem::EncryptionSystem(int data)
 {
-    plainPassCode = 0;
-    encPassCode = 0;
-}
-
-EncryptionSystem::~EncryptionSystem()
-{
-    clearPlainPass();
-    clearEncPass();
-}
-
-//Setters
-
-bool EncryptionSystem::setPlainPassCode(int plain)
-{
-    if (validatePlainPass(plain))
-    {
-        plainPassCode = plain;
-        return true;
-    }
-    return false;
-}
-
-void EncryptionSystem::setEncPassCode(int enc)
-{
-    encPassCode = enc;
+    this->data = data;
 }
 
 //Getters
-int EncryptionSystem::getPlainPassCode()
+int EncryptionSystem::getData()
 {
-    return plainPassCode;
+    return data;
 }
 
-int EncryptionSystem::getEncPassCode()
+void EncryptionSystem::splitDigits()
 {
-    return encPassCode;
+    firstDigit = ((data % 10000) / 1000);
+    secondDigit = ((data % 1000) / 100);
+    thirdDigit = ((data % 100) / 10);
+    fourthDigit = ((data % 10) / 1);
 }
 
-//Check plain passcode is 4 digits
-bool EncryptionSystem::validatePlainPass(int plain)
+void EncryptionSystem::swap()
 {
-    int counter{0};
+    int temp;
 
-    while (plain > 0)
-    {
-        plain /= 10;
-        counter++;
-    }
+    temp = firstDigit;
+    firstDigit = thirdDigit;
+    thirdDigit = temp;
 
-    return (counter == 4) ? true : false;
+    temp = secondDigit;
+    secondDigit = fourthDigit;
+    fourthDigit = temp;
 }
 
-bool EncryptionSystem::encrypt(int plain)
+void EncryptionSystem::encrypt()
 {
-    int first, second, third, fourth, digits, temp1, temp2;
-    if (setPlainPassCode(plain))
-    {
-        temp1 = plain;
-        first = (temp1 / 1000 + 7) % 10;
-        temp2 = temp1 % 1000;
-        second = (temp2 / 100 + 7) % 10;
-        temp1 = temp2 % 100;
-        third = (temp1 / 10 + 7) % 10;
-        temp2 = temp1 % 10;
-        fourth = (temp2 + 7) % 10;
-        temp1 = first;
-        first = third * 1000;
-        third = temp1 * 10;
-        temp1 = second;
-        second = fourth * 100;
-        fourth = temp1;
-        digits = first + second + third + fourth;
+    splitDigits();
 
-        setEncPassCode(digits);
-        clearPlainPass();
-        return true;
-    }
-    std::cout << "ERROR: Invalid length. A 4 digit pass code is required"
+    firstDigit = (firstDigit + 7) % 10;
+    secondDigit = (secondDigit + 7) % 10;
+    thirdDigit = (thirdDigit + 7) % 10;
+    fourthDigit = (fourthDigit + 7) % 10;
+
+    swap();
+
+    printEncryptedData();
+}
+
+void EncryptionSystem::decrypt()
+{
+    splitDigits();
+    swap();
+
+    firstDigit = (firstDigit >= 7) ? firstDigit - 7 : (firstDigit + 10) - 7;
+    secondDigit = (secondDigit >= 7) ? secondDigit - 7 : (secondDigit + 10) - 7;
+    thirdDigit = (thirdDigit >= 7) ? thirdDigit - 7 : (thirdDigit + 10) - 7;
+    fourthDigit = (fourthDigit >= 7) ? fourthDigit - 7 : (fourthDigit + 10) - 7;
+
+    printDecryptedData();
+}
+
+void EncryptionSystem::printEncryptedData()
+{
+    std::cout << "Encrypted data is: "
+              << firstDigit
+              << secondDigit
+              << thirdDigit
+              << fourthDigit
               << std::endl;
-    return false;
 }
 
-int EncryptionSystem::decrypt(int enc)
+void EncryptionSystem::printDecryptedData()
 {
-    int first, second, third, fourth, digits, temp1, temp2;
-
-    if (enc == 0)
-
-    {
-        enc = getEncPassCode();
-    }
-
-    temp1 = enc;
-    first = (temp1 / 1000);
-    temp2 = temp1 % 1000;
-    second = (temp2 / 100);
-    temp1 = temp2 % 100;
-    third = (temp1 / 10);
-    temp2 = temp1 % 10;
-    fourth = temp2;
-    temp1 = (first + 3) % 10;
-    first = (third + 3) % 10 * 1000;
-    third = temp1 * 10;
-    temp1 = (second + 3) % 10;
-    second = (fourth + 3) % 10 * 100;
-    fourth = temp1;
-    digits = first + second + third + fourth;
-    clearEncPass();
-    setPlainPassCode(digits);
-
-    return digits;
-}
-
-void EncryptionSystem::clearPlainPass()
-{
-    plainPassCode = 0;
-}
-
-void EncryptionSystem::clearEncPass()
-{
-    encPassCode = 0;
+    std::cout << "Decrypted data is: "
+              << firstDigit
+              << secondDigit
+              << thirdDigit
+              << fourthDigit
+              << std::endl;
 }

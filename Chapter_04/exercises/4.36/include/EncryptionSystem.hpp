@@ -3,24 +3,20 @@
 class EncryptionSystem
 {
 private:
-    int plainPassCode;
-    int encPassCode;
+    int data;
+    int firstDigit;
+    int secondDigit;
+    int thirdDigit;
+    int fourthDigit;
+    void printDecryptedData();
+    void printEncryptedData();
 
 public:
-    EncryptionSystem();
-    ~EncryptionSystem();
+    EncryptionSystem(int);
 
-    //Setters
-    bool setPlainPassCode(int);
-    void setEncPassCode(int);
-
-    //Getters
-
-    int getPlainPassCode();
-    int getEncPassCode();
-
-    bool validatePlainPass(int);
-    bool encrypt(int);
-    void clearPlainPass();
-    void clearEncPass();
+    int getData();
+    void splitDigits();
+    void swap();
+    void encrypt();
+    void decrypt();
 };

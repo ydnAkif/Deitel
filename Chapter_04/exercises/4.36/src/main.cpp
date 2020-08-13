@@ -3,7 +3,7 @@
 
 int main()
 {
-    EncryptionSystem es;
+
     int passCode{0};
 
     std::cout << "Welcome to encryption/decryption system"
@@ -12,17 +12,17 @@ int main()
 
     std::cout << "Enter a 4 digit passcode to be encrypted: ";
     std::cin >> passCode;
-
-    es.encrypt(passCode);
+    EncryptionSystem es(passCode);
+    es.encrypt();
 
     std::cout << std::endl
-              << "Encrypted passcode: "
-              << es.getEncPassCode()
-              << std::endl
               << std::endl;
+    std::cout << "Enter a 4 digit passcode to be decrypted: ";
+    std::cin >> passCode;
+    EncryptionSystem dc(passCode);
+    dc.decrypt();
 
-    std::cout << "Decrypted passcode: "
-              << es.decrypt(es.getEncPassCode())
+    std::cout << std::endl
               << std::endl;
 
     return 0;
