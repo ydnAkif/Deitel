@@ -9,12 +9,12 @@ set(PROJECT_INCLUDE_DIR ${PROJECT_DIR}/include)
 set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 
 set(PROJECT_SOURCES
-	${PROJECT_SOURCE_DIR}/Gradebook.cpp
+	    ${PROJECT_SOURCE_DIR}/Gradebook.cpp
         ${PROJECT_SOURCE_DIR}/main.cpp
     )
 
 set(PROJECT_HEADERS
-	${PROJECT_INCLUDE_DIR}/Gradebook.hpp	
+	    ${PROJECT_INCLUDE_DIR}/Gradebook.hpp	
     )
 
 include_directories(${PROJECT_INCLUDE_DIR})

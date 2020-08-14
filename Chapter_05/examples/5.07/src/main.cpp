@@ -2,7 +2,14 @@
 
 int main()
 {
-   
+    unsigned int counter{1};
 
-    return 0;
+    do
+    {
+        std::cout << counter
+                  << " ";
+        ++counter;
+    } while (counter <= 10);
+
+    std::cout << std::endl;
 }
