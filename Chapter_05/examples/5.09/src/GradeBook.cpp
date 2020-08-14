@@ -2,7 +2,7 @@
 #include <string>
 #include "GradeBook.hpp"
 
-GradeBook::GradeBook(const std::string &name)
+GradeBook::GradeBook(std::string name)
 {
     setCourseName(name);
 
@@ -13,7 +13,7 @@ GradeBook::GradeBook(const std::string &name)
     fCount = 0;
 }
 // SETTERS
-void GradeBook::setCourseName(const std::string &name)
+void GradeBook::setCourseName(std::string name)
 {
     if (name.length() <= 25)
     {

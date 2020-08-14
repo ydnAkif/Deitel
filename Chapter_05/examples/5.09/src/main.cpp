@@ -1,6 +1,6 @@
 #include "GradeBook.hpp"
 
-int main(int argc, const char *argv[])
+int main()
 {
     GradeBook myGradeBook("CS101 C++ Programming");
 

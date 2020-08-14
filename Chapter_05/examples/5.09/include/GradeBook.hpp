@@ -1,5 +1,4 @@
 #include <string>
-#include <iostream>
 
 class GradeBook
 {
@@ -12,13 +11,13 @@ private:
     int fCount;
 
 public:
-    explicit GradeBook(const std::string &);
+    explicit GradeBook(std::string);
 
-    void setCourseName(const std::string &);
+    void setCourseName(std::string);
 
     std::string getCourseName() const;
 
     void displayMessage() const;
-    void inputGrades() ;
+    void inputGrades();
     void displayGradeReport() const;
 };
