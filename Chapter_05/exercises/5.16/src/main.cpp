@@ -22,6 +22,7 @@ int main()
         std::cout << std::setw(4)
                   << year
                   << std::setw(12)
+                  << "$"
                   << dollars
                   << '.';
         (cents < 10) ? (std::cout << "0" << cents) : (std::cout << cents);
