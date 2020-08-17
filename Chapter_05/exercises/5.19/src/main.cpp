@@ -17,14 +17,7 @@ int main()
 
     for (int i = 1; i <= limit; ++i)
     {
-        if (toogle == 0)
-        {
-            pi -= (4.0f / divisor);
-        }
-        else
-        {
-            pi += (4.0f / divisor);
-        }
+        toogle == 0 ? (pi -= (4.0f / divisor)) : (pi += (4.0f / divisor));
 
         toogle = (1 - toogle);
 
