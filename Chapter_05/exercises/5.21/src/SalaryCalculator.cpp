@@ -134,9 +134,8 @@ double SalaryCalculator::calculateSalary()
     switch (getEmployeeCode())
     {
     case 1:
-        std::cout
-            << std::endl
-            << "Enter manager weekly salary: ";
+        std::cout << std::endl
+                  << "Enter manager weekly salary: ";
         std::cin >> dValue;
         setManagerRate(dValue);
         std::cout << "Manager Salary: $"
@@ -147,9 +146,8 @@ double SalaryCalculator::calculateSalary()
                   << std::endl;
         break;
     case 2:
-        std::cout
-            << std::endl
-            << "Enter hourly rate: ";
+        std::cout << std::endl
+                  << "Enter hourly rate: ";
         std::cin >> dValue;
         if (dValue > 0.0f)
         {
