@@ -15,13 +15,11 @@ private:
     std::string _b;
     std::string _c;
     std::string _d;
-
     std::vector<std::string> _answers;
-
     int _correct;
 
 public:
-    Question() : _correct(0) { initialise(); }
+    Question() {}
 
     Question(const std::string &Q, const std::string &A, const std::string &B,
              const std::string &C, const std::string &D)

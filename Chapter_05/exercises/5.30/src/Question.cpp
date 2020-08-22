@@ -6,6 +6,10 @@
 // INITIALISATION
 // checks if question and answers are set and sets them if not
 // creates and randomises an answers vector
+Question::Question(): _correct(0)
+{
+    initialise();
+}
 void Question::initialise()
 {
     std::string tmp;
