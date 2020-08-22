@@ -63,13 +63,15 @@ void Question::setD(const std::string &D) { _d = D; }
 void Question::getQuestion() const
 {
     // question
-    std::cout << _q << std::endl
+    std::cout << _q
+              << std::endl
               << std::endl;
 
     // answers
-    for (unsigned int i = 0; i < _answers.size(); i++)
+    for (unsigned int i = 0; i < _answers.size(); ++i)
     {
-        std::cout << _answers[i] << std::endl;
+        std::cout << _answers[i]
+                  << std::endl;
     }
     std::cout << std::endl;
 }
@@ -102,7 +104,7 @@ bool Question::answer(char &ans)
 // INT ANSWER
 bool Question::answer(int ans)
 {
-    ans--;
+    --ans;
 
     if (_answers[ans] == _a)
     {

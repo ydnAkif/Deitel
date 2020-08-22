@@ -9,7 +9,8 @@ void Quiz::run()
     }
     if (!initialise())
     {
-        std::cout << "ERROR: Quiz failed to initialise" << std::endl;
+        std::cout << "ERROR: Quiz failed to initialise"
+                  << std::endl;
         return;
     }
     gameLoop();
@@ -63,12 +64,16 @@ void Quiz::gameLoop()
         askQuestion();
         checkScore();
 
-        std::cout << "You scored: " << _correctAnswers << "/5" << std::endl;
-        printf("%s\n",
-               (_correctAnswers == 5) ? "I say, jolly well done old chap"
-                                      : "Better luck next time. Perhaps "
-                                        "something with less thinking would be "
-                                        "more your style.");
+        std::cout << "You scored: "
+                  << _correctAnswers << "/5"
+                  << std::endl;
+
+        (_correctAnswers == 5) ? (std::cout << "I say, jolly well done old chap"
+                                            << std::endl)
+                               : (std::cout << "Better luck next time. Perhaps "
+                                               "something with less thinking would be "
+                                               "more your style."
+                                            << std::endl);
 
         std::cout << "Play Again? ";
         std::cin >> choice;
@@ -89,7 +94,7 @@ void Quiz::askQuestion()
 {
     int choice = 0;
 
-    for (unsigned int i = 0; i < _questions.size(); i++)
+    for (unsigned int i = 0; i < _questions.size(); ++i)
     {
         std::cout << "Question " << i + 1 << ": ";
         _questions[i].getQuestion();
@@ -111,7 +116,7 @@ void Quiz::askQuestion()
 int Quiz::checkScore()
 {
     // loop through each question and check if it was answered correctly
-    for (unsigned int i = 0; i < _questions.size(); i++)
+    for (unsigned int i = 0; i < _questions.size(); ++i)
     {
         if (_questions[i].isCorrect())
         {
