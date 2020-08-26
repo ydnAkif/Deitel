@@ -1,15 +1,16 @@
 #include <iostream>
 
+int square(int);
 int main()
 {
-    unsigned int counter{1};
+    int a = 10;
+    std::cout << a
+              << " squared: "
+              << square(a)
+              << std::endl;
+}
 
-    while (counter <= 10)
-    {
-        std::cout << counter << " ";
-        ++counter;
-    }
-    std::cout << std::endl;
-
-    return 0;
+int square(int n)
+{
+    return n * n;
 }
