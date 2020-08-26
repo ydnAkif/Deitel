@@ -15,22 +15,22 @@ int main()
     srand(static_cast<unsigned int>(time(0)));
 
     unsigned int myPoint{0};
-    Status gameStatus = CONTINUE;
+    Status gameStatus = Status::CONTINUE;
     unsigned int sumofDice = rollDice();
 
     switch (sumofDice)
     {
     case 7:
     case 11:
-        gameStatus = WON;
+        gameStatus = Status::WON;
         break;
     case 2:
     case 3:
     case 12:
-        gameStatus = LOST;
+        gameStatus = Status::LOST;
         break;
     default:
-        gameStatus = CONTINUE;
+        gameStatus = Status::CONTINUE;
         myPoint = sumofDice;
         std::cout << "Point is "
                   << myPoint
@@ -38,24 +38,24 @@ int main()
         break;
     }
 
-    while (CONTINUE == gameStatus)
+    while (Status::CONTINUE == gameStatus)
     {
         sumofDice = rollDice();
 
         if (sumofDice == myPoint)
         {
-            gameStatus = WON;
+            gameStatus = Status::WON;
         }
         else
         {
             if (sumofDice == 7)
             {
-                gameStatus = LOST;
+                gameStatus = Status::LOST;
             }
         }
     }
 
-    if (WON == gameStatus)
+    if (Status::WON == gameStatus)
     {
         std::cout << "Player wins"
                   << std::endl;
