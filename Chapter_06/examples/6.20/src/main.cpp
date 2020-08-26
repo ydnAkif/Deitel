@@ -1,15 +1,36 @@
 #include <iostream>
 
+int squareByValue(int);
+void squareByReference(int &);
+
 int main()
 {
-    unsigned int counter{1};
+    int x = 2;
+    int z = 4;
 
-    while (counter <= 10)
-    {
-        std::cout << counter << " ";
-        ++counter;
-    }
-    std::cout << std::endl;
+    std::cout << "x= "
+              << x
+              << " before squareByValue"
+              << std::endl;
+    std::cout << "Value returned by squareByValue: "
+              << squareByValue(x)
+              << std::endl;
+    std::cout << "x= "
+              << x
+              << " after squareByValue"
+              << std::endl;
+    std::cout << "z= "
+              << z
+              << " before squareByReference"
+              << std::endl;
 
-    return 0;
+    squareByReference(z);
+
+    std::cout << "z= "
+              << z
+              << " after squareByReference"
+              << std::endl;
 }
+
+int squareByValue(int number) { return number *= number; }
+void squareByReference(int &numberRef) { numberRef *= numberRef; }

@@ -1,15 +1,26 @@
 #include <iostream>
 
+int square(int x)
+{
+    std::cout << "square of integer "
+              << x
+              << " is ";
+    return x * x;
+}
+
+double square(double y)
+{
+    std::cout << "square of double "
+              << y
+              << " is ";
+    return y * y;
+}
+
 int main()
 {
-    unsigned int counter{1};
-
-    while (counter <= 10)
-    {
-        std::cout << counter << " ";
-        ++counter;
-    }
+    std::cout << square(7);
     std::cout << std::endl;
 
-    return 0;
+    std::cout << square(7.5);
+    std::cout << std::endl;
 }

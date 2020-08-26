@@ -1,15 +1,14 @@
 #include <iostream>
 
+int number = 7;
 int main()
 {
-    unsigned int counter{1};
+    double number = 10.5;
 
-    while (counter <= 10)
-    {
-        std::cout << counter << " ";
-        ++counter;
-    }
-    std::cout << std::endl;
-
-    return 0;
+    std::cout << "Local double valur of number = "
+              << number
+              << std::endl
+              << "Global int value of number = "
+              << ::number
+              << std::endl;
 }
