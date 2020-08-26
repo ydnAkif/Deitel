@@ -1,15 +1,25 @@
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
 
 int main()
 {
-    unsigned int counter{1};
+    unsigned int seed{0};
 
-    while (counter <= 10)
+    std::cout << "Enter seed: ";
+    std::cin >> seed;
+    srand(seed);
+
+    for (unsigned int counter{1}; counter <= 10; ++counter)
     {
-        std::cout << counter << " ";
-        ++counter;
+        std::cout << std::setw(10)
+                  << (1 + rand() % 6);
+
+        if (counter % 5 == 0)
+        {
+            std::cout << std::endl;
+        }
     }
-    std::cout << std::endl;
 
     return 0;
 }

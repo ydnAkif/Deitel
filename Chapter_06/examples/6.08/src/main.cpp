@@ -1,15 +1,19 @@
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
 
 int main()
 {
-    unsigned int counter{1};
-
-    while (counter <= 10)
+    for (unsigned int counter = 1; counter <= 20; ++counter)
     {
-        std::cout << counter << " ";
-        ++counter;
+        std::cout << std::setw(10)
+                  << (1 + rand() % 6);
+
+        if (counter % 5 == 0)
+        {
+            std::cout << std::endl;
+        }
     }
-    std::cout << std::endl;
 
     return 0;
 }
