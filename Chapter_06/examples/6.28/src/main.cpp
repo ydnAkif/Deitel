@@ -1,15 +1,30 @@
 #include <iostream>
+#include <iomanip>
+
+unsigned long factorial(unsigned long);
 
 int main()
 {
-    unsigned int counter{1};
-
-    while (counter <= 10)
+    for (unsigned int counter = 0; counter <= 10; ++counter)
     {
-        std::cout << counter << " ";
-        ++counter;
+        std::cout << std::setw(2)
+                  << counter
+                  << "!= "
+                  << factorial(counter)
+                  << std::endl;
     }
-    std::cout << std::endl;
 
     return 0;
+}
+
+unsigned long factorial(unsigned long number)
+{
+    if (number <= 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return number * factorial(number - 1);
+    }
 }
