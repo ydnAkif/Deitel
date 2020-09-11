@@ -10,7 +10,7 @@ set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 
 set(PROJECT_SOURCES
 		${PROJECT_SOURCE_DIR}/Question.cpp
-        ${PROJECT_SOURCE_DIR}/main.cpp
+        	${PROJECT_SOURCE_DIR}/main.cpp
 		${PROJECT_SOURCE_DIR}/Quiz.cpp
     )
 
