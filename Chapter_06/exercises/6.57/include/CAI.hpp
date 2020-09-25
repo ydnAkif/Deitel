@@ -62,6 +62,7 @@ private:
     void printReport();
     void reset();
     int getRandomNumber(const int&, const int&);
+    
 
 public:
     CAI();

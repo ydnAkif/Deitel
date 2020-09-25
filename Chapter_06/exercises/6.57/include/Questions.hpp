@@ -9,23 +9,23 @@ struct Questions
 
     void init(T n1, T n2)
     {
-        num1 = n1;
-        num2 = n2;
+        num1 = (n1 > n2) ? n1 : n2;
+        num2 = (n1 > n2) ? n2 : n1;
     }
 
     T multiply()
     {
-        return num1 * num2;
+        return (num1 * num2);
     }
 
     T add()
     {
-        return num1 + num2;
+        return (num1 + num2);
     }
 
     T subtract()
     {
-        return ((num1 > num2) ? (num1 - num2) : (num2 - num1));
+        return (num1 - num2);
     }
 
     T divide()

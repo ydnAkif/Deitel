@@ -278,7 +278,6 @@ void CAI::printReport()
 
 void CAI::reset()
 {
-
     _questionCount = 0;
     _correct = 0;
     _incorrect = 0;
