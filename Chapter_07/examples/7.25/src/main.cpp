@@ -36,10 +36,10 @@ int main(int argc, char const *argv[])
     if (integers1 != integers2)
         cout << "integers1 and integers2 are not equal" << endl;
 
-    vector<int> integer3(integers1);
-    cout << "\nSize of vector integers3 is " << integer3.size()
+    vector<int> integers3(integers1);
+    cout << "\nSize of vector integers3 is " << integers3.size()
          << "\nvector after initialization:" << endl;
-    outputVector(integer3);
+    outputVector(integers3);
 
     cout << "\nAssigning integers2 to integers1:" << endl;
 
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[])
 
     integers1[5] = 1000;
 
-    cout << "integers1" << endl;
+    cout << "integers1:" << endl;
     outputVector(integers1);
 
     try
@@ -72,14 +72,14 @@ int main(int argc, char const *argv[])
     }
     catch (out_of_range &ex)
     {
-        cerr << "An exception occurred" << ex.what() << endl;
+        cerr << "An exception occurred: " << ex.what() << endl;
     }
 
-    cout << "\nCurrent integers3 size is: " << integer3.size() << endl;
-    integer3.push_back(1000);
-    cout << "New integers3 size is: " << integer3.size() << endl;
+    cout << "\nCurrent integers3 size is: " << integers3.size() << endl;
+    integers3.push_back(1000);
+    cout << "New integers3 size is: " << integers3.size() << endl;
     cout << "integer3 now contains:";
-    outputVector(integer3);
+    outputVector(integers3);
 
     return 0;
 }
@@ -92,6 +92,6 @@ void outputVector(const vector<int> &items)
 }
 void inputVector(vector<int> &items)
 {
-    for (int item : items)
+    for (int &item : items)
         cin >> item;
 }
