@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build",
             "windows": {
-                "program": "${workspaceFolder}/build/Program.exe",
+                "program": "${workspaceFolder}/build/Gradebook.exe",
                 "miDebuggerPath": "gdb.exe"
             },
             "args": [],
