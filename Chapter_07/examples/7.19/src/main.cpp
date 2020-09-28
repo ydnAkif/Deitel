@@ -15,6 +15,7 @@ int main()
          91, 94, 100,
          76, 72, 84,
          87, 93, 73};
+
     string courseName = "CS101 Introduction to C++ Programming";
 
     GradeBook myGradeBook(courseName, grades);
