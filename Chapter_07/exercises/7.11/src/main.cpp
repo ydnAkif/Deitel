@@ -8,14 +8,8 @@ int main(int argc, char const *argv[])
 
     //a
 
-    array<int, 10> counts;
+    array<int, 10> counts = {0};
 
-    for (size_t i = 0; i < counts.size(); ++i)
-    {
-        counts[i] = 0;
-        cout << counts[i] << " ";
-    }
-    cout << endl;
     cout << endl;
 
     //b
@@ -23,7 +17,7 @@ int main(int argc, char const *argv[])
     array<int, 15> bonus = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
     for (size_t j = 0; j < bonus.size(); ++j)
     {
-        bonus[j] += 1;
+        ++bonus[j];
         cout << bonus[j] << " ";
     }
     cout << endl;
@@ -52,7 +46,7 @@ int main(int argc, char const *argv[])
 
     for (size_t l = 0; l < bestScores.size(); ++l)
     {
-        cout << l + 1 << " ==> " << bestScores[l] << endl;
+        cout << bestScores[l] << '\t' << endl;
     }
 
     cout << endl;
