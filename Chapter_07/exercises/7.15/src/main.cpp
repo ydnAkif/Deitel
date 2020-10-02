@@ -12,14 +12,9 @@ int main()
     for (size_t row = 0; row < sales.size(); ++row)
     {
         for (size_t column = 0; column < sales[row].size(); ++column)
-            sales[row][column] = 0;
-    }
-
-    for (size_t i = 0; i < sales.size(); ++i)
-    {
-        for (size_t j = 0; j < sales[i].size(); ++j)
         {
-            std::cout << sales[i][j] << " ";
+            sales[row][column] = 0;
+            std::cout << sales[row][column] << " ";
         }
         std::cout << std::endl;
     }
