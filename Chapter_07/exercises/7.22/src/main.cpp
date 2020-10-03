@@ -12,8 +12,8 @@ uniform_int_distribution<int> randomInt(0, 7);
 const size_t SIZE = 8; // 8x8
 
 void clearBoard(array<array<int, SIZE>, SIZE> &);
-void printBoard(const array<array<int, SIZE>, SIZE> &);
-bool validMove(int, int, const array<array<int, SIZE>, SIZE> &);
+void printBoard(const array<array<int, SIZE>, SIZE> );
+bool validMove(int, int, const array<array<int, SIZE>, SIZE> );
 
 int main(int argc, char const *argv[])
 {
@@ -100,7 +100,7 @@ void clearBoard(array<array<int, SIZE>, SIZE> &board)
     }
 }
 
-void printBoard(const array<array<int, SIZE>, SIZE> &board)
+void printBoard(const array<array<int, SIZE>, SIZE> board)
 {
     cout << setw(4) << '0' << setw(3) << '1'
          << setw(3) << '2' << setw(3) << '3'
@@ -118,7 +118,7 @@ void printBoard(const array<array<int, SIZE>, SIZE> &board)
     cout << endl;
 }
 
-bool validMove(int row, int col, const array<array<int, SIZE>, SIZE> &board)
+bool validMove(int row, int col, const array<array<int, SIZE>, SIZE> board)
 {
     return (row >= 0 && row < SIZE && col >= 0 && col < SIZE && board[row][col] == 0);
 }
