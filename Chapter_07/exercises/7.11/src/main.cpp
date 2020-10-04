@@ -44,9 +44,9 @@ int main(int argc, char const *argv[])
     array<int, 5>
         bestScores = {100, 95, 90, 85, 80};
 
-    for (size_t l = 0; l < bestScores.size(); ++l)
+    for (size_t score : bestScores)
     {
-        cout << bestScores[l] << '\t' << endl;
+        cout << score << '\t';
     }
 
     cout << endl;

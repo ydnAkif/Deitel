@@ -93,7 +93,7 @@ int main(int argc, char const *argv[])
          << winSum + loseSum << " = " << setprecision(2)
          << 100.0 * winSum / (winSum + loseSum) << "%\n";
 
-    for (size_t k = 1; k <= 21; ++k)
+    for (size_t k = 1; k < arraySize; ++k)
         length += wins[k] * k + losses[k] * k;
     cout << "The average game length is " << setprecision(2)
          << length / static_cast<double>(ROLLS) << " rolls." << endl;
