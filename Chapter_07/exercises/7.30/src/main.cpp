@@ -7,15 +7,15 @@
 using namespace std;
 
 const size_t SIZE = 20;
+const int MAXNUMBER = 500;
 
 default_random_engine engine(static_cast<int>(time(0)));
-uniform_int_distribution<int> randomInt(1, 100);
+uniform_int_distribution<int> randomInt(1, MAXNUMBER);
 
 void printArray(const array<int, SIZE>, int, int);
 
 int main(int argc, char const *argv[])
 {
-    const int MAXNUMBER = 500;
 
     array<int, SIZE> arr;
     for (size_t loop = 0; loop < SIZE; ++loop)
