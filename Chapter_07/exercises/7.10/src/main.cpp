@@ -1,6 +1,7 @@
 #include <iostream>
-#include <array>
 #include <iomanip>
+#include <array>
+
 
 const size_t salaryRange = 11;
 

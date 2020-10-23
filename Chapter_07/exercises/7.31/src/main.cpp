@@ -10,7 +10,7 @@ void stringReverse(const string &);
 
 int main(int argc, char const *argv[])
 {
-    string strArray = "Print this string backwards.";
+    string strArray = {"Print this string backwards."};
 
     for (size_t loop = 0; loop < SIZE; ++loop)
         cout << strArray[loop];
