@@ -2,7 +2,6 @@
 #include <iomanip>
 #include <array>
 
-
 const size_t salaryRange = 11;
 
 using namespace std;
@@ -46,6 +45,15 @@ void display(const array<int, salaryRange> &arrSalaries)
     cout << "Employees in the range:";
 
     for (unsigned int i = 2; i < 10; ++i)
-        cout << "\n$" << i << "00-$" << i << "99 : " << arrSalaries[i];
-    cout << "\nOver $1000: " << arrSalaries[10] << endl;
+        cout << endl
+             << "$"
+             << i
+             << "00-$"
+             << i
+             << "99 : "
+             << arrSalaries[i];
+    cout << endl
+         << "Over $1000: "
+         << arrSalaries[10]
+         << endl;
 }
