@@ -8,7 +8,7 @@ using namespace std;
 
 int rollDice();
 
-static int totalRolls = 10;
+static int totalRolls = 36000;
 const static size_t arraySize = 13;
 
 default_random_engine engine(static_cast<int>(time(0)));
