@@ -29,11 +29,12 @@ int main(int argc, char const *argv[])
 
     cout << "Enter 12 temprature for mounths" << endl;
 
-    for (double k = 0; k < monthlyTemperatures.size(); ++k)
+    for (double k : monthlyTemperatures)
     {
-        cin >> monthlyTemperatures[k];
+        cin >> k;
 
-        cout << monthlyTemperatures[k] << "\370"
+        cout << k
+             << '\370'
              << "C ";
     }
     cout << endl;
