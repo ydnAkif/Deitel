@@ -15,8 +15,7 @@ int main(int argc, char const *argv[])
     int value;
     bool isDuplicate;
 
-
-    for (size_t i = 0; i < a.size(); ++i)
+    for (size_t i = 0; i < myArray.size(); ++i)
     {
         isDuplicate = false;
 
@@ -27,12 +26,12 @@ int main(int argc, char const *argv[])
         {
             for (size_t j = 0; j < subscript; ++j)
             {
-               	if (value == a[j])
+                if (value == myArray[j])
                 {
                     isDuplicate = true;
                     break;
                 }
-            } 
+            }
 
             if (!isDuplicate)
                 myArray[subscript++] = value;
@@ -49,8 +48,8 @@ int main(int argc, char const *argv[])
          << "The nonduplicate values are:"
          << endl;
 
-    for (size_t index = 0; index<subscript; ++index)
-        cout << myArray[index]<< setw(4) ;
+    for (size_t index = 0; index < subscript; ++index)
+        cout << myArray[index] << setw(4);
     cout << endl;
 
     return 0;
