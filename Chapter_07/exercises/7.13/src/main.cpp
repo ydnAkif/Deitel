@@ -9,32 +9,33 @@ const size_t arraySize = 20;
 int main(int argc, char const *argv[])
 {
 
-    array<int, arraySize> a = {};
+    array<int, arraySize> myArray = {};
 
-    int subscript = 0, value;
+    size_t subscript = 0;
+    int value;
     bool isDuplicate;
 
-    cout << "Enter 20 integers between 10 and 100:"
-         << endl;
 
     for (size_t i = 0; i < a.size(); ++i)
     {
         isDuplicate = false;
 
+        cout << "(" << i + 1 << "/20) Enter value between 10 and 100: ";
         cin >> value;
 
-        if ((value > 10) && (value < 100))
+        if ((value >= 10) && (value <= 100))
         {
-
             for (size_t j = 0; j < subscript; ++j)
-                if (value == a[j])
+            {
+               	if (value == a[j])
                 {
                     isDuplicate = true;
                     break;
                 }
+            } 
 
             if (!isDuplicate)
-                a[subscript++] = value;
+                myArray[subscript++] = value;
         }
         else
         {
@@ -48,9 +49,8 @@ int main(int argc, char const *argv[])
          << "The nonduplicate values are:"
          << endl;
 
-    for (size_t k = 0; a[k] != 0; ++k)
-        cout << setw(4) << a[k];
-
+    for (size_t index = 0; index<subscript; ++index)
+        cout << myArray[index]<< setw(4) ;
     cout << endl;
 
     return 0;

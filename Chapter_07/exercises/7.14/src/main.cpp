@@ -8,11 +8,11 @@ int main(int argc, char const *argv[])
 {
     const size_t vectorSize = 20;
     vector<int> myVector;
-    int subscript = 0;
+    size_t subscript = 0;
     int value = 0;
     bool isDuplicate;
 
-    for (unsigned int i = 0; i < vectorSize; ++i)
+    for (size_t i = 0; i < vectorSize; ++i)
     {
         isDuplicate = false;
 
@@ -21,9 +21,9 @@ int main(int argc, char const *argv[])
 
         if (value >= 10 && value <= 100)
         {
-            for (unsigned int i = 0; i < myVector.size(); ++i)
+            for (size_t j = 0; j < subscript; ++j)
             {
-                if (value == myVector[i])
+                if (value == myVector[j])
                 {
                     isDuplicate = true;
                     break;
@@ -37,10 +37,13 @@ int main(int argc, char const *argv[])
             }
         }
         else
-            i--;
+        {
+            cout << "Invalid number.\n";
+            --i;
+        }
     }
 
-    for (unsigned int index = 0; index < subscript; ++index)
+    for (size_t index = 0; index < subscript; ++index)
         cout << myVector[index] << setw(4);
     cout << endl;
 
