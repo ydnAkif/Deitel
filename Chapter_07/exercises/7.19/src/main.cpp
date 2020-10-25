@@ -1,50 +1,80 @@
+#include <array>
 #include <iostream>
-#include <vector>
-#include <iomanip>
-
-const size_t salaryRange = 11;
+#include <stdexcept>
 
 using namespace std;
 
-void wages(vector<int> &);
+void outputArray7(const array<int, 7> &);
+void outputArray10(const array<int, 10> &);
 
-void display(const vector<int> &);
-
-int main(int argc, char const *argv[])
+int main()
 {
-    vector<int> vecSalaries(salaryRange);
 
-    cout << setiosflags(ios::fixed | ios::showpoint);
+    array<int, 7> integers1{};
+    array<int, 10> integers2{};
 
-    wages(vecSalaries);
-    display(vecSalaries);
+    cout << "Size of array integers1 is " << integers1.size()
+         << "\narray after initialization: ";
+    outputArray7(integers1);
+
+    cout << "\nSize of array integers2 is " << integers2.size()
+         << "\narray after initialization: ";
+    outputArray10(integers2);
+
+    cout << "\nEnter 17 integers:" << endl;
+    for (int &item : integers1)
+        cin >> item;
+    for (int &item : integers2)
+        cin >> item;
+
+    cout << "\nAfter input, the arrays contain:\nintegers1: ";
+    outputArray7(integers1);
+    cout << "integers2: ";
+    outputArray10(integers2);
+
+    cout << "\nEvaluating: integers1 != integers2" << endl;
+
+    if (std::equal(std::begin(integers1), std::end(integers1), std::begin(integers2)))
+        cout << "integers1 and integers2 are equal" << endl;
+    else
+        cout << "integers1 and integers2 are not equal" << endl;
+
+    array<int, 7> integers3{integers1};
+
+    cout << "\nSize of array integers3 is " << integers3.size()
+         << "\narray after initialization: ";
+    outputArray7(integers3);
+
+    cout << "\nintegers1[ 5 ] is " << integers1[5];
+
+    cout << "\n\nAssigning 1000 to integers1[ 5 ]" << endl;
+    integers1.at(5) = 1000;
+    cout << "integers1: ";
+    outputArray7(integers1);
+
+    try
+    {
+        cout << "\nAttempt to display integers1.at( 15 )" << endl;
+        cout << integers1.at(15) << endl;
+    }
+    catch (out_of_range &ex)
+    {
+        cerr << "An exception occured: " << ex.what() << endl;
+    }
 
     return 0;
 }
 
-void wages(vector<int> &vecSalaries)
+void outputArray7(const array<int, 7> &a)
 {
-    double sales, i = 0.09;
-    cout << "Enter employee gross sales (-1 to end): ";
-    cin >> sales;
-
-    while (sales != -1)
-    {
-        double salary = 200.0 + sales * i;
-        cout << setprecision(2) << "Employee Commission is $" << salary << endl;
-        int x = static_cast<int>(salary) / 100;
-        ++vecSalaries[(x < 10 ? x : 10)];
-        cout << endl
-             << "Enter employee gross sales (-1 to end):";
-        cin >> sales;
-    }
+    for (const int &item : a)
+        cout << item << ' ';
+    cout << endl;
 }
 
-void display(const vector<int> &vecSalaries)
+void outputArray10(const array<int, 10> &a)
 {
-    cout << "Employees in the range:";
-
-    for (unsigned int i = 2; i < 10; ++i)
-        cout << "\n$" << i << "00-$" << i << "99 : " << vecSalaries[i];
-    cout << "\nOver $1000: " << vecSalaries[10] << endl;
+    for (const int &item : a)
+        cout << item << ' ';
+    cout << endl;
 }
