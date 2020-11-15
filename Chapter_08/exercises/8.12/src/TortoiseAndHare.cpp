@@ -1,8 +1,6 @@
 #include "TortoiseAndHare.hpp"
 
-TortoiseAndHare::TortoiseAndHare() : _gameState(GameStates::PLAY), gen(std::random_device()())
-{
-}
+TortoiseAndHare::TortoiseAndHare() : _gameState(GameStates::PLAY), gen(std::random_device()()) {}
 
 TortoiseAndHare::~TortoiseAndHare() {}
 
