@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.14)
 
-project(SquareofAsterisks)
+project(Program)
 
 set(PROJECT_DIR ${CMAKE_SOURCE_DIR})
 
@@ -12,9 +12,7 @@ set(PROJECT_SOURCES
         ${PROJECT_SOURCE_DIR}/main.cpp
     )
 
-set(PROJECT_HEADERS
-       
-    )
+set(PROJECT_HEADERS)
 
 include_directories(${PROJECT_INCLUDE_DIR})
 
