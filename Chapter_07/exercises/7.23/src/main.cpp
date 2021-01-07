@@ -85,7 +85,6 @@ bool isValidMove(int row, int column, const array<array<int, SIZE>, SIZE> workBo
 
 void printBoard(const array<array<int, SIZE>, SIZE> workBoard)
 {
-
     cout << setw(4) << '0' << setw(3) << '1'
          << setw(3) << '2' << setw(3) << '3'
          << setw(3) << '4' << setw(3) << '5'
@@ -96,8 +95,7 @@ void printBoard(const array<array<int, SIZE>, SIZE> workBoard)
         cout << row;
         for (size_t col = 0; col < SIZE; ++col)
             cout << setw(3) << workBoard[row][col];
-        cout << '\n';
+        cout << endl;
     }
-
     cout << endl;
 }

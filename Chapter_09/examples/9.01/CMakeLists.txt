@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.19.2)
 
 project(Program)
 
@@ -10,10 +10,13 @@ set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 
 set(PROJECT_SOURCES
         ${PROJECT_SOURCE_DIR}/main.cpp
+        ${PROJECT_SOURCE_DIR}/Time.cpp
     )
 
-set(PROJECT_HEADERS)
+set(PROJECT_HEADERS
+        ${PROJECT_INCLUDE_DIR}/Time.hpp
+    )
 
 include_directories(${PROJECT_INCLUDE_DIR})
 
-add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS})

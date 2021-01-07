@@ -12,8 +12,8 @@ uniform_int_distribution<int> randomInt(0, 7);
 const size_t SIZE = 8; // 8x8
 
 void clearBoard(array<array<int, SIZE>, SIZE> &);
-void printBoard(const array<array<int, SIZE>, SIZE> );
-bool validMove(int, int, const array<array<int, SIZE>, SIZE> );
+void printBoard(const array<array<int, SIZE>, SIZE>);
+bool validMove(int, int, const array<array<int, SIZE>, SIZE>);
 
 int main(int argc, char const *argv[])
 {
@@ -54,7 +54,6 @@ int main(int argc, char const *argv[])
             {
                 if (access[testRow][testColumn] < accessNumber)
                 {
-
                     accessNumber = access[testRow][testColumn];
                     minRow = testRow;
                     minColumn = testColumn;
@@ -78,7 +77,7 @@ int main(int argc, char const *argv[])
 
     cout << "The tour ended with " << moveNumber << " moves. \n";
 
-    if (moveNumber == 64)
+    if (moveNumber == SIZE * SIZE)
         cout << "This was a full tour!\n\n";
     else
         cout << "This was not a full tour.\n\n";
