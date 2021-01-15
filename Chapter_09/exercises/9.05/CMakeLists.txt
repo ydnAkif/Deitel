@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19.2)
+cmake_minimum_required(VERSION 3.14)
 
 project(Program)
 
@@ -10,9 +10,12 @@ set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 
 set(PROJECT_SOURCES
         ${PROJECT_SOURCE_DIR}/main.cpp
+        ${PROJECT_SOURCE_DIR}/Complex.cpp
     )
 
-set(PROJECT_HEADERS)
+set(PROJECT_HEADERS
+		${PROJECT_INCLUDE_DIR}/Complex.hpp
+	)
 
 include_directories(${PROJECT_INCLUDE_DIR})
 

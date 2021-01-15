@@ -1,39 +1,36 @@
+// Fig. 9.22: main.cpp
+// Friends can access private members of a class
 #include <iostream>
 
 using namespace std;
 
+//Cout class definiton
 class Count
 {
-    friend void setX(Count &, int); // firend declration
-
-public:
-    Count() : x(0)
-    {
-    }
-
-    void print() const
-    {
-        std::cout << x << std::endl;
-    }
+    friend void setX(Count &, int); // friend declaration
 
 private:
-    int x;
+    int x{0};
+
+public:
+    int getX() const { return x; }
 };
+
+// function setX can modify private data of Count
+// because setX is declared as a friend of Count (line 10)
 
 void setX(Count &c, int val)
 {
-    c.x = val;
+    c.x = val; //allowed because setX is a friend of Count
 }
 
-int main(int argc, const char *argv[])
+int main(int argc, char const *argv[])
 {
-    Count counter;
-    cout << "counter.x after instantiation: ";
-    counter.print();
+    Count counter; // create Count object
 
-    setX(counter, 8);
-    cout << "counter.x after call to setX friend function: ";
-    counter.print();
-
+    cout << "counter.x after instantiation: " << counter.getX() << endl;
+    setX(counter, 8); // set x using a friend function
+    cout << "counter.x after call to setX friend function: "
+         << counter.getX() << endl;
     return 0;
 }

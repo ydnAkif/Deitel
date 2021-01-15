@@ -1,36 +1,41 @@
 // Fig. 9.23: main.cpp
-// Friends can access private members of a class
+// Using the this pointer to refer to object members.
 #include <iostream>
 
 using namespace std;
 
-//Cout class definiton
-class Count
+class Test
 {
-    friend void setX(Count &, int); // friend declaration
-
 private:
     int x{0};
 
 public:
-    int getX() const { return x; }
+    explicit Test(int);
+    void print() const;
 };
 
-// function setX can modify private data of Count
-// because setX is declared as a friend of Count (line 10)
+// constructor
+Test::Test(int value) : x{value} {} // initialize x to value
 
-void setX(Count &c, int val)
+// print x using implicit then explicit this pointers;
+// the parantheses around *this are required
+void Test::print() const
 {
-    c.x = val; //allowed because setX is a friend of Count
+    // implicitly use the this pointer to access the member x
+    cout << "        x = " << x;
+
+    //emplicitly use the this pointer and the arrow operator
+    // to access the member x
+    cout << "\n  this->x = " << this->x;
+
+    // emplicitly use the dereferenced this pointer and
+    // the dot operator to access the member x
+    cout << "\n(*this).x = " << (*this).x << endl;
 }
 
 int main(int argc, char const *argv[])
 {
-    Count counter; // create Count object
-
-    cout << "counter.x after instantiation: " << counter.getX() << endl;
-    setX(counter, 8); // set x using a friend function
-    cout << "counter.x after call to setX friend function: "
-         << counter.getX() << endl;
+    Test testObject{12}; // instantiate and initialize testObject
+    testObject.print();
     return 0;
 }
