@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "Date.hpp"
 
 Date::Date(int d, int m, int y)
@@ -59,7 +60,7 @@ int Date::monthDays()
 {
     const int days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    return month == 2 && leapYear() ? 29 : days[month - 1]; 
+    return month == 2 && leapYear() ? 29 : days[month - 1];
 
     return month == 2 && leapYear() ? 29 : days[month - 1];
 }
@@ -79,5 +80,6 @@ void Date::nextDay()
 
 void Date::print() const
 {
-    std::cout << day << "/" << month << "/" << year << std::endl;
+    std::cout << std::setfill('0') << std::setw(2) << day << "/"
+              << std::setw(2) << month << "/" << std::setw(4) << year << std::endl;
 }
