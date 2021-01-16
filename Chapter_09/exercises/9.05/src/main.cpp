@@ -2,15 +2,26 @@
 
 int main(int argc, char const *argv[])
 {
-    Complex complex1;
-    Complex complex2(123, 456);
+    Complex b(1, 7), c(9, 2);
 
-    Complex complex3 = (complex1 + complex2);
+    b.printComplex();
+    std::cout << " + ";
+    c.printComplex();
+    std::cout << " = ";
+    b.addition(c);
+    b.printComplex();
 
-    std::cout << "complex1: " << complex1
-              << "\ncomplex2: " << complex2
-              << "\ncomplex3: " << complex3
-              << std::endl;
+    std::cout << std::endl;
+    b.setComplexNumber(10, 1);
+    c.setComplexNumber(11, 5);
+
+    b.printComplex();
+    std::cout << " - ";
+    c.printComplex();
+    std::cout << " = ";
+    b.subtraction(c);
+    b.printComplex();
+    std::cout << std::endl;
 
     return 0;
 }

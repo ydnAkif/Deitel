@@ -6,29 +6,17 @@
 class Complex
 {
 private:
-    double real;
-    double imaginary;
-
-    std::ostream &printComplex(std::ostream &);
+    double realPart;
+    double imaginaryPart;
 
 public:
-    explicit Complex(double = 0, double = 0);
+    explicit Complex(double = 0.0, double = 0.0);
     ~Complex();
 
-    Complex operator+(Complex c) const
-    {
-        return Complex(real + c.real, imaginary + c.imaginary);
-    }
-
-    Complex operator-(Complex c) const
-    {
-        return Complex(real - c.real, imaginary - c.imaginary);
-    }
-
-    friend std::ostream &operator<<(std::ostream &out, Complex &c)
-    {
-        return c.printComplex(out);
-    }
+    void addition(const Complex &);
+    void subtraction(const Complex &);
+    void printComplex() const;
+    void setComplexNumber(double, double);
 };
 
 #endif

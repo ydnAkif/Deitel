@@ -2,14 +2,30 @@
 
 Complex::Complex(double r, double i)
 {
-    real = r;
-    imaginary = i;
+    setComplexNumber(r, i);
 }
 
 Complex::~Complex() {}
 
-std::ostream &Complex::printComplex(std::ostream &out)
+void Complex::addition(const Complex &a)
 {
-    out << "(" << real << "," << imaginary << ")";
-    return out;
+    realPart += a.realPart;
+    imaginaryPart += a.imaginaryPart;
+}
+
+void Complex::subtraction(const Complex &s)
+{
+    realPart -= s.realPart;
+    imaginaryPart -= s.imaginaryPart;
+}
+
+void Complex::printComplex() const
+{
+    std::cout << '(' << realPart << ',' << imaginaryPart << ')';
+}
+
+void Complex::setComplexNumber(double r, double i)
+{
+    realPart = r;
+    imaginaryPart = i;
 }
