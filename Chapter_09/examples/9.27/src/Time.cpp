@@ -4,7 +4,6 @@
 #include <sstream>
 #include <stdexcept>
 #include "Time.hpp" // Time class definition
-using namespace std;
 
 // constructor function to initialize private data;
 // calls member function setTime to set variables;
@@ -32,7 +31,7 @@ Time &Time::setHour(int h)
    }
    else
    {
-      throw invalid_argument("hour must be 0-23");
+      throw std::invalid_argument("hour must be 0-23");
    }
 
    return *this; // enables cascading
@@ -47,7 +46,7 @@ Time &Time::setMinute(int m)
    }
    else
    {
-      throw invalid_argument("minute must be 0-59");
+      throw std::invalid_argument("minute must be 0-59");
    }
 
    return *this; // enables cascading
@@ -62,7 +61,7 @@ Time &Time::setSecond(int s)
    }
    else
    {
-      throw invalid_argument("second must be 0-59");
+      throw std::invalid_argument("second must be 0-59");
    }
 
    return *this; // enables cascading
@@ -78,20 +77,20 @@ unsigned int Time::getMinute() const { return minute; }
 unsigned int Time::getSecond() const { return second; }
 
 // return Time as a string in universal-time format (HH:MM:SS)
-string Time::toUniversalString() const
+std::string Time::toUniversalString() const
 {
-   ostringstream output;
-   output << setfill('0') << setw(2) << getHour() << ":"
-          << setw(2) << getMinute() << ":" << setw(2) << getSecond();
+   std::ostringstream output;
+   output << std::setfill('0') << std::setw(2) << getHour() << ":"
+          << std::setw(2) << getMinute() << ":" << std::setw(2) << getSecond();
    return output.str();
 }
 
 // return Time as string in standard-time format (HH:MM:SS AM or PM)
-string Time::toStandardString() const
+std::string Time::toStandardString() const
 {
-   ostringstream output;
+   std::ostringstream output;
    output << ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12)
-          << ":" << setfill('0') << setw(2) << getMinute() << ":" << setw(2)
+          << ":" << std::setfill('0') << std::setw(2) << getMinute() << ":" << std::setw(2)
           << getSecond() << (hour < 12 ? " AM" : " PM");
    return output.str();
 }
