@@ -10,10 +10,9 @@ private:
 
 public:
     Time();
-    Time(int, int, int);
+    ~Time();
 
     // Setters
-    void setTime(int, int, int);
     void setHour(int);
     void setMinute(int);
     void setSecond(int);
@@ -23,8 +22,8 @@ public:
     int getMinute() const;
     int getSecond() const;
 
-    void printUniversal() const;
     void printStandard() const;
+    void printUniversal() const;
 };
 
 #endif

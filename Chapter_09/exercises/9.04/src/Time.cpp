@@ -1,33 +1,22 @@
 #include <ctime>
 #include <iomanip>
 #include <iostream>
-#include <stdexcept>
 #include "Time.hpp"
 
 Time::Time()
 {
-    time_t currentTime;
-    struct tm *localTime;
+    time_t rawtime;
+    struct tm *timeinfo;
 
-    time(&currentTime);
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
 
-    localTime = localtime(&currentTime);
-    hour = localTime->tm_hour;
-    minute = localTime->tm_min;
-    second = localTime->tm_sec;
+    setHour(timeinfo->tm_hour);
+    setMinute(timeinfo->tm_min);
+    setSecond(timeinfo->tm_sec);
 }
 
-Time::Time(int hour, int minute, int second)
-{
-    setTime(hour, minute, second);
-}
-
-void Time::setTime(int h, int m, int s)
-{
-    setHour(h);
-    setMinute(m);
-    setSecond(s);
-}
+Time::~Time() {}
 
 void Time::setHour(int h)
 {
@@ -57,16 +46,21 @@ int Time::getHour() const { return hour; }
 int Time::getMinute() const { return minute; }
 int Time::getSecond() const { return second; }
 
-void Time::printUniversal() const
-{
-    std::cout << std::setfill('0') << std::setw(2) << getHour() << ":"
-              << std::setw(2) << getMinute() << ":" << std::setw(2)
-              << getSecond();
-}
-
 void Time::printStandard() const
 {
-    std::cout << ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12)
-              << ":" << std::setfill('0') << std::setw(2) << getMinute() << ":"
-              << std::setw(2) << getSecond() << (hour < 12 ? " AM" : " PM");
+    std::cout << std::setfill('0') << std::setw(2)
+              << ((getHour() % 12 == 0) ? 12 : getHour() % 12) << ":"
+              << std::setw(2)
+              << getMinute() << ":"
+              << std::setw(2)
+              << getSecond() << (hour < 12 ? " AM" : " PM");
+}
+
+void Time::printUniversal() const
+{
+    std::cout << std::setfill('0') << std::setw(2)
+              << getHour() << ":"
+              << std::setw(2)
+              << getMinute() << ":" << std::setw(2)
+              << getSecond();
 }
