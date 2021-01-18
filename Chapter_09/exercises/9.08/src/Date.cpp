@@ -62,7 +62,7 @@ int Date::monthDays()
 
     return month == 2 && leapYear() ? 29 : days[month - 1];
 
-    return month == 2 && leapYear() ? 29 : days[month - 1];
+
 }
 
 void Date::nextDay()
