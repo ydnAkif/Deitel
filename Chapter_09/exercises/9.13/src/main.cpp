@@ -6,14 +6,18 @@ using namespace std;
 
 int main(int argc, const char *argv[])
 {
-    Point tl(1, 10);
-    Point bl(1, 1);
-    Point tr(5, 10);
-    Point br(5, 1);
+    Point tl(12, 20);
+    Point bl(12, 12);
+    Point tr(18, 20);
+    Point br(18, 12);
 
     try
     {
-        Rectangle r1(tl, bl, tr, br);
+        Rectangle r1(tl, bl, tr, br, '?', '*');
+        if (r1.isValid())
+        {
+            r1.draw();
+        }
 
         std::cout << "Width: " << r1.getWidth() << "\nLength: " << r1.getLength()
                   << "\nArea: " << r1.getArea()

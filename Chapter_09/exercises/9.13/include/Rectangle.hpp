@@ -10,6 +10,9 @@ private:
     Point topRight;
     Point bottomLeft;
     Point bottomRight;
+    char fillChar;
+    char periChar;
+    bool valid;
 
     /* 
     
@@ -24,10 +27,13 @@ private:
     */
 
 public:
-    Rectangle(Point, Point, Point, Point);
+    Rectangle(Point, Point, Point, Point, char, char);
     ~Rectangle();
 
     void setRectangle(Point, Point, Point, Point);
+    void setFillCharacter(char);
+    void setPerimeterCharacter(char);
+    void setValid(bool);
 
     double getLength() const;
     double getWidth() const;
@@ -35,6 +41,8 @@ public:
     double getArea() const;
 
     bool isSquare();
+    bool isValid();
+    void draw();
 };
 
 #endif
