@@ -4,8 +4,8 @@
 
 int main(int argc, char const *argv[])
 {
-    std::string num = "-1234";
-    std::string num2 = "-222";
+    std::string num = "-20";
+    std::string num2 = "-180";
     HugeInteger hi;
     hi.input(num);
     hi.output();
