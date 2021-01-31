@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     IntegerSet set1(a1, 3);
     IntegerSet set2(a2, 3);
     set1.printSet();
-    set2.printSet() ;
+    set2.printSet();
 
     set1.unionOfSets(set2).printSet();
     set1.interSectionOfSets(set2).printSet();
