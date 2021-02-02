@@ -13,7 +13,7 @@ private:
     DeckOfCards deck;
 
 public:
-    explicit PokerHand(int nCards = 5);
+    explicit PokerHand(int = 5);
     ~PokerHand();
     bool contains_a_pair() const;
     bool contains_two_pairs() const;
