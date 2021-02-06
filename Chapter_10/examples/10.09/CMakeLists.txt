@@ -10,9 +10,12 @@ set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 
 set(PROJECT_SOURCES
         ${PROJECT_SOURCE_DIR}/main.cpp
+        ${PROJECT_SOURCE_DIR}/Array.cpp
     )
 
-set(PROJECT_HEADERS)
+set(PROJECT_HEADERS
+        ${PROJECT_INCLUDE_DIR}/Array.hpp
+    )
 
 include_directories(${PROJECT_INCLUDE_DIR})
 
