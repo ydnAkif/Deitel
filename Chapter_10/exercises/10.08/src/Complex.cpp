@@ -52,6 +52,21 @@ Complex Complex::operator*(const Complex &right) const
     return Multiplication;
 }
 
+Complex Complex::operator/(const Complex &right) const
+{
+    double a = this->getReal();
+    double b = this->getImaginary();
+    double c = right.getReal();
+    double d = right.getImaginary();
+
+    Complex Division;
+
+    Division.setReal((a * c + b * d) / (c * c + d * d));
+    Division.setImaginary((b * c - a * d) / (c * c + d * d));
+
+    return Division;
+}
+
 bool Complex::operator==(const Complex &right) const
 {
     if (getReal() != right.getReal() || getImaginary() != right.getImaginary())

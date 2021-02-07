@@ -19,6 +19,7 @@ public:
     Complex operator+(const Complex &) const;
     Complex operator-(const Complex &) const;
     Complex operator*(const Complex &) const;
+    Complex operator/(const Complex &) const;
 
     bool operator==(const Complex &) const;
     bool operator!=(const Complex &) const;
