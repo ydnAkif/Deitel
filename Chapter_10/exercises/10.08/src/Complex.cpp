@@ -104,12 +104,12 @@ void Complex::setImaginary(double imaginary)
 
 void Complex::print() const
 {
-    std::cout << '(' << real << ", " << imaginary << ')';
+    std::cout << '(' << real << " + " << imaginary << "i)";
 }
 
 std::ostream &operator<<(std::ostream &output, const Complex &right)
 {
-    output << '(' << right.getReal() << ", " << right.getImaginary() << ')' << std::endl;
+    output << '(' << right.getReal() << " + " << right.getImaginary() << "i)" << std::endl;
 
     return output;
 }
