@@ -149,7 +149,7 @@ std::ostream &operator<<(std::ostream &output, const HugeInteger &num)
 {
     size_t i;
 
-    for (i = 0; (i < HugeInteger::digits) && (0 == num.integer[i]); ++i)
+    for (i = 0; (0 == num.integer[i]) && (i < HugeInteger::digits); ++i)
     {
         ;
     }
