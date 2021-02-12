@@ -22,7 +22,7 @@ double OvernightPackage::getOvernightFeePerOunce() const
 
 double OvernightPackage::calculateCost() const
 {
-    return Package::getWeight() * (Package::getCostPerOunce() + getOvernightFeePerOunce());
+    return Package::getWeight() * (getCostPerOunce() + getOvernightFeePerOunce());
 }
 
 OvernightPackage::~OvernightPackage()

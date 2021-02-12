@@ -16,9 +16,9 @@ public:
     void setFlatFee(double);
     double getFlatFee() const;
 
-    double calculateCost() const;
+    virtual double calculateCost() const;
 
-    ~TwoDayPackage();
+    virtual ~TwoDayPackage();
 };
 
 #endif

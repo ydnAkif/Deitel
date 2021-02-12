@@ -48,9 +48,9 @@ public:
     void setCostPerOunce(double);
     double getCostPerOunce() const;
 
-    double calculateCost() const;
+    virtual double calculateCost() const;
 
-    ~Package();
+    virtual ~Package();
 };
 
 #endif

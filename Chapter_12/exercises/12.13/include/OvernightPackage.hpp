@@ -16,7 +16,7 @@ public:
     void setOvernightFeePerOunce(double);
     double getOvernightFeePerOunce() const;
 
-    double calculateCost() const;
+    virtual double calculateCost() const;
 
     ~OvernightPackage();
 };
