@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.19.2)
+
+project(Program)
+
+set(PROJECT_DIR ${CMAKE_SOURCE_DIR})
+
+set(PROJECT_INCLUDE_DIR ${PROJECT_DIR}/include)
+
+set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
+
+set(PROJECT_SOURCES
+        ${PROJECT_SOURCE_DIR}/main.cpp
+        ${PROJECT_SOURCE_DIR}/Date.cpp
+        ${PROJECT_SOURCE_DIR}/CommissionEmployee.cpp
+        ${PROJECT_SOURCE_DIR}/BasePlusCommissionEmployee.cpp
+        ${PROJECT_SOURCE_DIR}/Employee.cpp
+        ${PROJECT_SOURCE_DIR}/SalariedEmployee.cpp
+        ${PROJECT_SOURCE_DIR}/HourlyEmployee.cpp
+    )
+
+set(PROJECT_HEADERS
+        ${PROJECT_INCLUDE_DIR}/CommissionEmployee.hpp
+        ${PROJECT_INCLUDE_DIR}/BasePlusCommissionEmployee.hpp
+        ${PROJECT_INCLUDE_DIR}/Employee.hpp
+        ${PROJECT_INCLUDE_DIR}/SalariedEmployee.hpp
+        ${PROJECT_INCLUDE_DIR}/Date.hpp
+        ${PROJECT_INCLUDE_DIR}/HourlyEmployee.hpp
+    )
+
+include_directories(${PROJECT_INCLUDE_DIR})
+
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS})
