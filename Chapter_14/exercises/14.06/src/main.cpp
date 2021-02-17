@@ -48,8 +48,8 @@ int main(int argc, char const *argv[])
     }
 
     cout << "Proccessing...\n";
-
-    while (inTransaction >> transactionAccount >> transactionBalance)
+    inTransaction >> transactionAccount >> transactionBalance;
+    while (!inTransaction.eof())
     {
         inOldMaster >> masterAccount >> masterFirstName >> masterLastName >> masterBalance;
 
@@ -71,6 +71,8 @@ int main(int argc, char const *argv[])
             masterBalance += transactionBalance;
             printOutput(outNewMaster, masterAccount, masterFirstName, masterLastName, masterBalance);
         }
+
+        inTransaction >> transactionAccount >> transactionBalance;
     }
 
     inTransaction.close();
