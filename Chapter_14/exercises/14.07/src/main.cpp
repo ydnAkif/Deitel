@@ -111,7 +111,9 @@ int main(int argc, char const *argv[])
 
     cout << "Proccessing...\n";
 
-    while (inTransaction >> transAccount >> transBalance)
+    inTransaction >> transAccount >> transBalance;
+
+    while (!inTransaction.eof())
     {
         inOldMaster >> mAccount >> mFirst >> mLast >> mBalance;
 
@@ -128,8 +130,9 @@ int main(int argc, char const *argv[])
         {
             mBalance += transBalance;
             newOfMaster << mAccount << ' ' << mFirst << ' ' << mLast << ' ' << mBalance << '\n';
-        }
-        }
+        };
+        inTransaction >> transAccount >> transBalance;
+    }
 
     newOfMaster.close();
     inTransaction.close();
