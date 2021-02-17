@@ -5,7 +5,7 @@
 
 int main(int argc, char const *argv[])
 {
-    std::ofstream outClientFile("clients.txt", std::ios::out);
+    std::ofstream outClientFile("../clients.txt", std::ios::out);
 
     if (!outClientFile)
     {

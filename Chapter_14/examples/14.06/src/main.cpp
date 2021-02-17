@@ -8,7 +8,7 @@ void outputLine(int, const std::string &, double);
 
 int main(int argc, char const *argv[])
 {
-    std::ifstream inClientFile("clients.txt", std::ios::in);
+    std::ifstream inClientFile("../clients.txt", std::ios::in);
 
     if (!inClientFile)
     {
