@@ -21,16 +21,15 @@ char word(char, int);
 
 int main(int argc, char const *argv[])
 {
-    ofstream outPrint;
 
     char number[10];
 
     cout << "\n\nEnter a seven digit number: ";
     cin >> number;
 
-    outPrint.open("../phone.dat", ios::out);
+    ofstream outFile("../phone.dat", ios::out);
 
-    if (!outPrint)
+    if (!outFile)
     {
         cerr << "Unable to open the output file.";
         exit(EXIT_FAILURE);
@@ -50,14 +49,14 @@ int main(int argc, char const *argv[])
                         for (size_t m = 0; m < 3; ++m)
                             for (size_t n = 0; n < 3; ++n)
                                 for (size_t o = 0; o < 3; ++o)
-                                    outPrint << word(number[0], i)
-                                             << word(number[1], j)
-                                             << word(number[2], k)
-                                             << word(number[3], l)
-                                             << word(number[4], m)
-                                             << word(number[5], n)
-                                             << word(number[6], o)
-                                             << "\n";
+                                    outFile << word(number[0], i)
+                                            << word(number[1], j)
+                                            << word(number[2], k)
+                                            << word(number[3], l)
+                                            << word(number[4], m)
+                                            << word(number[5], n)
+                                            << word(number[6], o)
+                                            << "\n";
 
         return 0;
     }
@@ -80,7 +79,7 @@ char word(char var, int a)
 {
     if ((var < 55) || (var == 55 && a == 0))
         return ((static_cast<int>(var) - 49) * 3 + 62 + a);
-    else if ((var > 55) || (var ==55 && a > 0) )
+    else if ((var > 55) || (var == 55 && a > 0))
         return ((static_cast<int>(var) - 49) * 3 + 63 + a);
 
     return 0;
