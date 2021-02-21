@@ -24,6 +24,7 @@ int main(int argc, char const *argv[])
     std::generate(chars.begin(), chars.end(), nextLetter);
 
     std::cout << std::endl
+              << std::endl
               << "chars after generating letters A-J:" << std::endl;
     std::copy(chars.cbegin(), chars.cend(), output);
 
