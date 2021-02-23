@@ -47,7 +47,6 @@ int main(int argc, char const *argv[])
 
     std::cout << "\n\nThe total of the elements in a1 is: "
               << std::accumulate(a1.cbegin(), a1.cend(), 0);
-
     std::cout << "\n\nThe square of every integer in a1 is:\n";
     std::for_each(a1.cbegin(), a1.cend(), outputSquare);
 
