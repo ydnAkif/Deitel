@@ -6,30 +6,34 @@
 #include <random>
 
 template <typename T, size_t size>
-void displayElements(const std::array<T, size> &items, size_t low, size_t high)
+void displayElements(const std::array<T, size> &items,
+                     size_t low, size_t high)
 {
     for (size_t i = 0; i < items.size() && i < low; ++i)
         std::cout << "   ";
+
     for (size_t i = low; i < items.size() && i <= high; ++i)
         std::cout << items[i] << " ";
     std::cout << std::endl;
 }
 
 template <typename T, size_t size>
-void merge(std::array<T, size> &items, size_t left, size_t middle1, size_t middle2, size_t right)
+void merge(std::array<T, size> &items,
+           size_t left, size_t middleFirst,
+           size_t middleSecond, size_t right)
 {
     size_t leftIndex = left;
-    size_t rightIndex = middle2;
+    size_t rightIndex = middleSecond;
     size_t combinedIndex = left;
     std::array<T, size> combined;
 
-    std::cout << "merge:   ";
-    displayElements(items, left, middle1);
+    /* std::cout << "merge:   ";
+    displayElements(items, left, middleFirst);
     std::cout << "         ";
-    displayElements(items, middle2, right);
-    std::cout << std::endl;
+    displayElements(items, middleSecond, right);
+    std::cout << std::endl; */
 
-    while (leftIndex <= middle1 && rightIndex <= right)
+    while (leftIndex <= middleFirst && rightIndex <= right)
     {
         if (items[leftIndex] <= items[rightIndex])
             combined[combinedIndex++] = items[leftIndex++];
@@ -37,22 +41,23 @@ void merge(std::array<T, size> &items, size_t left, size_t middle1, size_t middl
             combined[combinedIndex++] = items[rightIndex++];
     }
 
-    if (leftIndex == middle2)
+    if (leftIndex == middleSecond)
     {
         while (rightIndex <= right)
             combined[combinedIndex++] = items[rightIndex++];
     }
     else
     {
-        while (leftIndex <= middle1)
+        while (leftIndex <= middleFirst)
             combined[combinedIndex++] = items[leftIndex++];
     }
 
     for (size_t i = left; i <= right; ++i)
         items[i] = combined[i];
-    std::cout << "          ";
+
+    /* std::cout << "         ";
     displayElements(items, left, right);
-    std::cout << std::endl;
+    std::cout << std::endl; */
 }
 
 template <typename T, size_t size>
@@ -60,21 +65,21 @@ void mergeSort(std::array<T, size> &items, size_t low, size_t high)
 {
     if ((high - low) >= 1)
     {
-        int middle1 = (low + high) / 2;
-        int middle2 = middle1 + 1;
+        size_t middleFirst = (low + high) / 2;
+        size_t middleSecond = middleFirst + 1;
 
-        std::cout << "split:   ";
+        /* std::cout << "split:   ";
         displayElements(items, low, high);
         std::cout << "         ";
-        displayElements(items, low, middle1);
+        displayElements(items, low, middleFirst);
         std::cout << "         ";
-        displayElements(items, middle2, high);
-        std::cout << std::endl;
+        displayElements(items, middleSecond, high);
+        std::cout << std::endl;*/
 
-        mergeSort(items, low, middle1);
-        mergeSort(items, middle2, high);
+        mergeSort(items, low, middleFirst);
+        mergeSort(items, middleSecond, high);
 
-        merge(items, low, middle1, middle2, high);
+        merge(items, low, middleFirst, middleSecond, high);
     }
 }
 
