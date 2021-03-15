@@ -9,12 +9,12 @@ void quickSort(std::array<std::string, SIZE> &, int, int);
 
 int main(int argc, char const *argv[])
 {
-    std::array<std::string, 19> animals = {"Macaw", "Lion", "Tiger",
-                                           "Bear", "Toucan", "Zebra",
-                                           "Puma", "Cat", "Yak", "Boar",
-                                           "Fox", "Ferret", "Crocodile",
-                                           "Alligator", "Elk", "Ox",
-                                           "Horse", "Eagle", "Hawk"};
+    std::array<std::string, SIZE> animals = {"Macaw", "Lion", "Tiger",
+                                             "Bear", "Toucan", "Zebra",
+                                             "Puma", "Cat", "Yak", "Boar",
+                                             "Fox", "Ferret", "Crocodile",
+                                             "Alligator", "Elk", "Ox",
+                                             "Horse", "Eagle", "Hawk"};
 
     std::cout << "before:";
     output(animals, SIZE);
