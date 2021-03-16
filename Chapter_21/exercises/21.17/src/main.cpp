@@ -36,10 +36,10 @@ int main(int argc, char const *argv[])
 int vowelCounter(std::string s, char vowel)
 {
     int vowelCounter = 0;
+    int i = 0;
 
     std::string::iterator ib = s.begin();
     convertToLower(ib, s.end());
-    int i = 0;
 
     while (ib != s.end())
     {
