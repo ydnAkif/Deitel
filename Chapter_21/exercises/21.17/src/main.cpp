@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 
     int totalVowels = vowelA + vowelE + vowelI + vowelO + vowelU;
 
-    std::cout << "In "
+    std::cout << "The string "
               << "\"" << s << "\""
               << " there are " << totalVowels << " vowels.\n\n";
 
