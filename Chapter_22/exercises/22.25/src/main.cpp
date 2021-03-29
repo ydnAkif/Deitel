@@ -17,12 +17,12 @@ int main(int argc, char const *argv[])
     int v;
     char a;
     char headers[] = "According to ";
-    const char *const names[] = {"isDigit ", "isApha ", "isAlNum ", "isLower ",
-                                 "isUpper ", "isSpace ", "isPunct ", "isPrint ", "isGraph ",
-                                 "toLower ", "toUpper "};
-    const char *const names2[] = {"digit", "letter", "letter/digit", "lowercase",
-                                  "uppercase", "space", "punctuation", "print", "graph",
-                                  "converted lowercase", "converted uppercase"};
+    const char *names[] = {"isDigit ", "isApha ", "isAlNum ", "isLower ",
+                           "isUpper ", "isSpace ", "isPunct ", "isPrint ", "isGraph ",
+                           "toLower ", "toUpper "};
+    const char *names2[] = {"digit", "letter", "letter/digit", "lowercase",
+                            "uppercase", "space", "punctuation", "print", "graph",
+                            "converted lowercase", "converted uppercase"};
     int (*f[])(int) = {isDigit, isAplha, isAlNum, isLower,
                        isUpper, isSpace, isPunct, isPrint,
                        isGraph, toLower, toUpper};
