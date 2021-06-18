@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.20.4)
 
 project(CreditLimits)
 
@@ -19,4 +19,4 @@ set(PROJECT_HEADERS
 
 include_directories(${PROJECT_INCLUDE_DIR})
 
-add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS)
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS})
