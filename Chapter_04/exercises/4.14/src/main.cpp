@@ -8,11 +8,11 @@ customer, the following facts are available:
 a) Account number (an integer)
 b) Balanceatthebeginningofthemonth
 c) Total of all items charged by this customer this month
-d) Totalofallcreditsappliedtothiscustomer'saccountthismonth
+d) Total of all credits applied to this customer's account this month
 e) Allowed credit limit
 The program should use a while statement to input each of these facts, calculate 
 the new balance (= beginning balance + charges – credits) and determine whether 
-the new balance exceeds the cus- tomer’s credit limit. For those customers whose 
+the new balance exceeds the customer’s credit limit. For those customers whose 
 credit limit is exceeded, the program should display the customer’s account number, 
 credit limit, new balance and the message “Credit Limit Exceeded.”
 
