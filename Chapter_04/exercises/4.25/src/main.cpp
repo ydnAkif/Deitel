@@ -1,3 +1,19 @@
+/******************************************************************************
+ 
+ Exercises 4.25 
+ 
+ (Square of Asterisks) Write a program that reads in the size of the side of a 
+ square then prints a hollow square of that size out of asterisks and blanks. 
+ Your program should work for squares of all side sizes between 1 and 20. 
+ For example, if your program reads a size of 5, it should print
+
+ ***** 
+ *   * 
+ *   *
+ *****
+  
+******************************************************************************/
+
 #include <iostream>
 
 int main(int argc, char const *argv[])

@@ -1,3 +1,16 @@
+/******************************************************************************
+ 
+ Exercises 4.26
+ 
+ (Palindromes) A palindrome is a number or a text phrase that reads the same 
+ backward as forward. For example, each of the following five-digit integers 
+ is a palindrome: 12321, 55555, 45554 and 11611. Write a program that reads in 
+ a five-digit integer and determines whether it’s a palindrome. 
+ [Hint: Use the division and modulus operators to separate the number into 
+ its individual digits.]
+  
+******************************************************************************/
+
 #include <iostream>
 
 bool isPalindrome(int num);

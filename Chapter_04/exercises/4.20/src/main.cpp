@@ -1,3 +1,14 @@
+/******************************************************************************
+
+Exercises 4.20
+
+(Validating User Input) The examination-results program of Fig. 4.16 assumes 
+that any val- ue input by the user that’s not a 1 must be a 2. Modify the 
+application to validate its inputs. On any input, if the value entered is other 
+than 1 or 2, keep looping until the user enters a correct value.
+
+******************************************************************************/
+
 #include <iostream>
 #include <iomanip>
 int main()
