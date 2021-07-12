@@ -8,8 +8,8 @@
  data to make it difficult (and hopefully—with the most advanced 
  schemes—impossible) for unauthorized users to read. In this exercise you’ll 
  investigate a simple scheme for encrypting and decrypting data. A company that 
- wants to send data over the In- ternet has asked you to write a program that will 
- encrypt it so that it may be transmitted more se- curely. All the data is 
+ wants to send data over the Internet has asked you to write a program that will 
+ encrypt it so that it may be transmitted more securely. All the data is 
  transmitted as four-digit integers. Your application should read a four-digit 
  integer entered by the user and encrypt it as follows: Replace each digit with 
  the result of adding 7 to the digit and getting the remainder after dividing the 

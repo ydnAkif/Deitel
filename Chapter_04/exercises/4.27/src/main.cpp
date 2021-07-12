@@ -4,7 +4,7 @@
  
  (Printing the Decimal Equivalent of a Binary Number) Input an integer 
  containing only 0s and 1s (i.e., a “binary” integer) and print its decimal 
- equivalent. Use the modulus and division op- erators to pick off the “binary” 
+ equivalent. Use the modulus and division operators to pick off the “binary” 
  number’s digits one at a time from right to left. Much as in the decimal number 
  system, where the rightmost digit has a positional value of 1, the next digit 
  left has a positional value of 10, then 100, then 1000, and so on, in the binary 
