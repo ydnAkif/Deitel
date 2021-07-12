@@ -1,4 +1,6 @@
-#pragma once
+#ifndef QUESTIONS_HPP
+#define QUESTIONS_HPP
+
 
 template <typename T>
 
@@ -37,3 +39,7 @@ struct Questions
         return static_cast<int>((num1 / num2) / scale) * scale;
     }
 };
+
+
+#endif // QUESTIONS_HPP
+

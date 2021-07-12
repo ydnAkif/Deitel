@@ -1,4 +1,5 @@
-#pragma once
+#ifndef POLL_HPP
+#define POLL_HPP
 
 #include <iomanip>
 #include <iostream>
@@ -22,3 +23,5 @@ public:
     void askPoll();
     void printResults();
 };
+
+#endif // POLL_HPP

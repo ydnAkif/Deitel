@@ -1,4 +1,5 @@
-#pragma once
+#ifndef QUESTIONS_HPP
+#define QUESTIONS_HPP
 
 #include <algorithm> // shuffle
 #include <chrono>    // system_clock
@@ -50,3 +51,5 @@ public:
 
     void cleanup();
 };
+
+#endif // QUESTIONS_HPP

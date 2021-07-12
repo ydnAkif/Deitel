@@ -1,5 +1,6 @@
 
-#pragma once
+#ifndef QUIZ_HPP
+#define QUIZ_HPP
 
 #include <iostream>
 #include <string>
@@ -41,3 +42,5 @@ public:
 
     void cleanup();
 };
+
+#endif // QUIZ_HPP

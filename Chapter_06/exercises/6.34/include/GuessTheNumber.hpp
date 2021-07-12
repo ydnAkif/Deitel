@@ -1,37 +1,27 @@
-#pragma once
+#ifndef GUESS_THE_NUMBER_HPP
+#define GUESS_THE_NUMBER_HPP
 
+#include <iomanip>
 #include <iostream>
-#include <random>
-#include <ctime>
+#include <string>
 
-enum class GameStates
-{
-    PLAY,
-    EXIT,
-    WON
-};
-
-class GuessTheNumber
+class Poll
 {
 private:
-    GameStates _currentState;
+    static const size_t TOPICS = 5;
+    static const size_t RESPONSES = 10;
 
-    const int MIN{0};
-    const int MAX{1000};
-
-    int _randNumber;
-    int _playerGuess;
-    char _playerContinue;
-
-    std::default_random_engine engine;
-
-    void initialise();
-    GameStates guess(int) const;
-    int getRandomNumber();
+    std::string topics[TOPICS];
+    int responses[TOPICS][RESPONSES];
 
 public:
-    GuessTheNumber();
-    ~GuessTheNumber();
+    Poll();
+    ~Poll() {}
 
-    void run();
+    void initialise();
+    void go();
+    void askPoll();
+    void printResults();
 };
+
+#endif // GUESS_THE_NUMBER_HPP

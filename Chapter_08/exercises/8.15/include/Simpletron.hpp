@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SIMPLETRON_HPP
+#define SIMPLETRON_HPP
+
 #include <iostream>
 
 class Simpletron
@@ -43,3 +45,5 @@ public:
     void output(const char *const, int, int, bool);
     void run();
 };
+
+#endif // SIMPLETRON_HPP

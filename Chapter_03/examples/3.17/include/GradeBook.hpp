@@ -17,7 +17,9 @@
  *
  * =====================================================================================
  */
-#pragma once
+
+#ifndef GRADEBOOK_HPP
+#define GRADEBOOK_HPP
 
 #include <string>
 
@@ -37,3 +39,5 @@ public:
 private:
    std::string courseName;
 };
+
+#endif // GRADEBOOK_HPP

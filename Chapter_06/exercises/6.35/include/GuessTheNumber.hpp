@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GUESS_THE_NUMBER_HPP
+#define GUESS_THE_NUMBER_HPP
 
 #include <iostream>
 #include <random>
@@ -38,3 +39,5 @@ public:
 
     void run();
 };
+
+#endif // GUESS_THE_NUMBER_HPP

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CAI_HPP
+#define CAI_HPP
 
 #include <iostream>
 #include <iomanip>
@@ -61,11 +62,12 @@ private:
     void printResponse(bool);
     void printReport();
     void reset();
-    int getRandomNumber(const int&, const int&);
-    
+    int getRandomNumber(const int &, const int &);
 
 public:
     CAI();
     ~CAI();
     void run();
 };
+
+#endif // CAI_HPP

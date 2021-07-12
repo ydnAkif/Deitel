@@ -18,7 +18,9 @@
  *
  * =====================================================================================
  */
-#pragma once
+
+#ifndef GRADEBOOK_HPP
+#define GRADEBOOK_HPP
 
 #include <string>
 
@@ -38,3 +40,5 @@ public:
 
    void displayMessage();
 };
+
+#endif // GRADEBOOK_HPP
