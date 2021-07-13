@@ -16,7 +16,7 @@ public:
 int main(int argc, const char *argv[])
 {
     GradeBook myGradeBook; // create a GradeBook object named myGradeBook
-    int a;
+
     myGradeBook.displayMessage();
 
     return 0;
