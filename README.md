@@ -2,9 +2,9 @@
 ## C++ How to Program 9th Edition Solutions
 
 
-  Run codes correctly please download [VsCode](https://code.visualstudio.com),[Cmake](https://cmake.org) and [GCC](https://gcc.gnu.org) or [Clang](https://clang.llvm.org) compiler.
+  To run codes correctly, please download [VsCode](https://code.visualstudio.com),[Cmake](https://cmake.org) and [GCC](https://gcc.gnu.org) or [Clang](https://clang.llvm.org) compiler.
   
-  In VsCode, I recommend you install [Microsoft C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and [Cmake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
+  In VsCode, I recommend you to install [Microsoft C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and [Cmake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
  
  for more information please visit [VsCode User Guide](https://code.visualstudio.com/docs/languages/cpp) and [Cmake Tools User Guide](https://vector-of-bool.github.io/docs/vscode-cmake-tools/index.html)
  
