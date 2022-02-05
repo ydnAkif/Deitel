@@ -19,7 +19,7 @@ Date::Date(const int d, const int m, const int y)
 
 void Date::setDay(const int d)
 {
-    this->day = (d > 0 && d <= 31) ? d : 1; // if day is not valid, set it to 1
+    this->day = d; // set day
 }
 
 void Date::setMonth(const int m)
