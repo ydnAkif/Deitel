@@ -1,4 +1,6 @@
-#include <iostream>
+
+#if !defined(DATE_HPP)
+#define DATE_HPP
 
 class Date
 {
@@ -23,3 +25,5 @@ public:
 
     void displayDate() const;
 };
+
+#endif // DATE_HPP
