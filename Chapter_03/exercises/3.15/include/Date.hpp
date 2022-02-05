@@ -5,23 +5,23 @@
 class Date
 {
 private:
-    short day;
-    short month;
-    short year;
+    int day;
+    int month;
+    int year;
 
 public:
     Date();
-    Date(const short, const short, const short);
+    Date(const int, const int, const int);
 
     // Setters Declarations
-    void setDay(const short);
-    void setMonth(const short);
-    void setYear(const short);
+    void setDay(const int);
+    void setMonth(const int);
+    void setYear(const int);
 
     // Getters Declarations
-    short getDay() const;
-    short getMonth() const;
-    short getYear() const;
+    int getDay() const;
+    int getMonth() const;
+    int getYear() const;
 
     void displayDate() const;
 };

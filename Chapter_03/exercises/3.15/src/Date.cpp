@@ -8,7 +8,7 @@ Date::Date()
     year = 1900; // default year is 1900
 }
 
-Date::Date(const short d, const short m, const short y)
+Date::Date(const int d, const int m, const int y)
 {
     setDay(d);   // set day
     setMonth(m); // set month
@@ -17,34 +17,34 @@ Date::Date(const short d, const short m, const short y)
 
 // Setters Definitions
 
-void Date::setDay(const short d)
+void Date::setDay(const int d)
 {
     this->day = (d > 0 && d <= 31) ? d : 1; // if day is not valid, set it to 1
 }
 
-void Date::setMonth(const short m)
+void Date::setMonth(const int m)
 {
     this->month = (m > 0 && m <= 12) ? m : 1; // if month is not valid, set it to 1
 }
 
-void Date::setYear(const short y)
+void Date::setYear(const int y)
 {
     this->year = y; // set year
 }
 
 // Getters Definitions
 
-short Date::getDay() const
+int Date::getDay() const
 {
     return day; // return day
 }
 
-short Date::getMonth() const
+int Date::getMonth() const
 {
     return month; // return month
 }
 
-short Date::getYear() const
+int Date::getYear() const
 {
     return year; // return year
 }
