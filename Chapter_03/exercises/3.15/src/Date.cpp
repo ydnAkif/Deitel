@@ -1,53 +1,59 @@
 #include "Date.hpp"
 
-Date::Date(int d, int m, int y)
+Date::Date()
 {
-
-    setDays(d);
-    setMonths(m);
-    setYears(y);
+    day = 1;
+    month = 1;
+    year = 1900;
 }
 
-// Setters
-
-void Date::setDays(int d)
+Date::Date(const short d, const short m, const short y)
 {
-    days = d;
+    setDay(d);
+    setMonth(m);
+    setYear(y);
 }
 
-void Date::setMonths(int m)
+// Setters Definitions
+
+void Date::setDay(const short d)
 {
-    months = (m > 0 && m <= 12) ? m : 1;
+    this->day = (d > 0 && d <= 31) ? d : 1;
 }
 
-void Date::setYears(int y)
+void Date::setMonth(const short m)
 {
-    years = y;
+    this->month = (m > 0 && m <= 12) ? m : 1;
 }
 
-//Getters
-
-int Date::getDays() const
+void Date::setYear(const short y)
 {
-    return days;
+    this->year = y;
 }
 
-int Date::getMonths() const
+// Getters Definitions
+
+short Date::getDay() const
 {
-    return months;
+    return day;
 }
 
-int Date::getYears() const
+short Date::getMonth() const
 {
-    return years;
+    return month;
+}
+
+short Date::getYear() const
+{
+    return year;
 }
 
 void Date::displayDate() const
 {
-    std::cout << getDays()
+    std::cout << this->day
               << "/"
-              << getMonths()
+              << this->month
               << "/"
-              << getYears()
+              << this->year
               << std::endl;
 }

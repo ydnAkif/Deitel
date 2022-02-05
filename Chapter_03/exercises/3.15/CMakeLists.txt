@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.20.4)
+cmake_minimum_required(VERSION 3.22.2)
 
 project(Date)
+
+set(CMAKE_CXX_STANDARD 17)
 
 set(PROJECT_DIR ${CMAKE_SOURCE_DIR})
 
@@ -14,8 +16,8 @@ set(PROJECT_SOURCES
     )
 
 set(PROJECT_HEADERS
-        ${PROJECT_INCLUDE_DIR}/Date.hpp
-    )
+       ${PROJECT_INCLUDE_DIR}/Date.hpp
+   )
 
 include_directories(${PROJECT_INCLUDE_DIR})
 

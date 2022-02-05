@@ -3,22 +3,23 @@
 class Date
 {
 private:
-    int days = 1;
-    int months = 1;
-    int years = 1990;
+    short day;
+    short month;
+    short year;
 
 public:
-    Date(int, int, int);
+    Date();
+    Date(const short, const short, const short);
 
-    //Setters
-    void setDays(int);
-    void setMonths(int);
-    void setYears(int);
+    // Setters Declarations
+    void setDay(const short);
+    void setMonth(const short);
+    void setYear(const short);
 
-    //Getters
-    int getDays() const;
-    int getMonths() const;
-    int getYears() const;
+    // Getters Declarations
+    short getDay() const;
+    short getMonth() const;
+    short getYear() const;
 
     void displayDate() const;
 };
